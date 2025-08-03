@@ -17,7 +17,7 @@ def lambda_handler(event, context):
 
     prompt = f"Summarize the following server log:\n\n{log_excerpt}"
 
-    summary_response = openai.ChatCompletion.create(
+    summary_response = openai.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
     )
